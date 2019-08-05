@@ -1,3 +1,28 @@
+# Treehouse Full Stack JavaScript - Project 7
+
+Jennifer Parker's React flickr Gallery App
+
+---
+
+## How to serve this application
+
+* Apply for a [non-commercial flickr API key](https://www.flickr.com/services/apps/create/apply/)
+* Create yahoo account/use tumblr account to sign in.
+* You’ll need to set up a `config.js` file that imports your API key into the application so that the application can request data from the Flickr API.
+    #### The `config.js` file should be configured like this:
+    ```javascript
+    const apiKey = 'YOUR API KEY';
+    export default apiKey;
+    ```
+* Place your `config.js` file inside of the `/src` folder
+* From the project root run `npm install`
+* From the project root run `npm start`
+
+---
+<br><br><br>
+
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
