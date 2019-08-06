@@ -1,21 +1,10 @@
 import React,{ Component } from 'react';
-//import ReactDom from 'react-dom';
 //import logo from './logo.svg';
 import './App.css';
+import Search from './Search';
 
 class App extends Component {
-  // render(){return(
-  //   <header>
-  //     <h1>Scoreboard</h1>
-  //     <span className= "stats">Playera: 1</span>
-    
-    
-    
-  //   </header>
-
-  // );
-
-  render(){
+ render(){
     return (
       <div className="container">
         <form className="search-form">
