@@ -2,12 +2,18 @@ import React,{ Component } from 'react';
 //import logo from './logo.svg';
 import './App.css';
 import Search from './Search';
+import Nav from './Nav';
+import Photos from './Photos';
+import Notfound from './Notfound';
 
 class App extends Component {
+  state= {}
  render(){
     return (
-      <div className="container">
-        <form className="search-form">
+      <div className="app">
+
+      <Search />
+        {/* <form className="search-form">
           <input type="search" name="search" placeholder="Search" required/>
           <button type="submit" className="search-button">
             <svg fill="#fff" height="24" viewBox="0 0 23 23" width="24" xmlns="http://www.w3.org/2000/svg">
@@ -15,17 +21,17 @@ class App extends Component {
               <path d="M0 0h24v24H0z" fill="none"/>
             </svg>
           </button>
-        </form>
-
-        <nav className="main-nav">
+        </form> */}
+        <Nav />
+        {/* <nav className="main-nav">
           <ul>
             <li><a href='https://google.com'>Cats</a></li>
             <li><a href='https://google.com'>Dogs</a></li>
             <li><a href='https://google.com'>Computers</a></li>
           </ul>
-        </nav>
-
-        <div className="photo-container">
+        </nav> */}
+        <Photos />
+        {/* <div className="photo-container">
           <h2>Results</h2>
           <ul>
             <li>
@@ -39,14 +45,14 @@ class App extends Component {
             </li>
             <li>
               <img src="https://farm5.staticflickr.com/4425/36337012384_ba3365621e.jpg" alt="" />
-            </li>
+            </li> */}
             
-            <li className="not-found">
+            <Notfound />
+            {/* <li className="not-found">
               <h3>No Results Found</h3>
               <p>You search did not return any results. Please try again.</p>
             </li>
-          </ul>
-        </div>
+          */}
 
       </div>
     );
