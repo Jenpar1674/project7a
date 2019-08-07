@@ -4,12 +4,11 @@ class Photos extends Component {
     state = {  }
     render() { 
         return ( 
-
 <div className="photo-container red darken-3">
           <h2>Results</h2>
           <ul>
             <li>
-            <li><a href='https://google.com'> <img src="https://farm5.staticflickr.com/4334/37032996241_4c16a9b530.jpg" alt="" /></a></li>
+              <img src="https://farm5.staticflickr.com/4334/37032996241_4c16a9b530.jpg" alt="" />
             </li>
             <li>
               <img src="https://farm5.staticflickr.com/4342/36338751244_316b6ee54b.jpg" alt="" />
@@ -19,9 +18,9 @@ class Photos extends Component {
             </li>
             <li>
               <img src="https://farm5.staticflickr.com/4425/36337012384_ba3365621e.jpg" alt="" />
-              </li>
+            </li>
             </ul>
-        </div>
+          </div>
 
 
          );

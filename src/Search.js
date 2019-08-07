@@ -4,6 +4,8 @@ class Search extends Component {
     state = { 
         text:''
      }
+
+     
     render() { 
         console.log(this.props)
         return(
