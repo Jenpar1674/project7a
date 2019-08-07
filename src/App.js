@@ -5,6 +5,7 @@ import Search from './Search';
 import Nav from './Nav';
 import Photos from './Photos';
 import Notfound from './Notfound';
+//import axios from 'axios'
 
 class App extends Component {
   

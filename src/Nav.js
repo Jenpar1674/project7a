@@ -5,13 +5,21 @@ import React from 'react';
     //render() { 
         const Nav = ()=> {
         return ( 
-
-            <nav className="nav-wrapper red darken-3">
+        //     <nav class="main-nav">
+        //     <ul>
+        //       <li><a href='#'>Cats</a></li>
+        //       <li><a href='#'>Dogs</a></li>
+        //       <li><a href='#'>Computers</a></li>
+        //     </ul>
+        //   </nav>
+            
+            <nav className=" main-nav nav-wrapper red darken-3">
             <div className="container">
-          <ul className = "center">
+          <ul className = "span">
             <li><a href='https://google.com'>Guns</a></li>
             <li><a href='https://google.com'>Butterflies</a></li>
             <li><a href='https://google.com'>Rainbows</a></li>
+           
           </ul>
           </div>
         </nav>
