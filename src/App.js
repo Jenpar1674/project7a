@@ -7,7 +7,11 @@ import Photos from './Photos';
 import Notfound from './Notfound';
 
 class App extends Component {
-  state= {}
+  
+  state= {
+
+
+  }
  render(){
     return (
       <div className="app">
