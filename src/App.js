@@ -1,10 +1,14 @@
 import React,{ Component } from 'react';
-//import logo from './logo.svg';
 import './App.css';
 import Search from './Search';
 import Nav from './Nav';
 import Photos from './Photos';
 import Notfound from './Notfound';
+import {
+  BrowserRouter,
+  //Switch,
+  //Route
+} from 'react-router-dom'
 //import axios from 'axios'
 
 class App extends Component {
@@ -15,8 +19,10 @@ class App extends Component {
   }
  render(){
     return (
-      <div className="app">
 
+      <BrowserRouter>
+      <div className="app">
+      
       <Search />
         {/* <form className="search-form">
           <input type="search" name="search" placeholder="Search" required/>
@@ -28,6 +34,7 @@ class App extends Component {
           </button>
         </form> */}
         <Nav />
+        {/* <route path="/" component={Cats}/> */}
         {/* <nav className="main-nav">
           <ul>
             <li><a href='https://google.com'>Cats</a></li>
@@ -60,6 +67,7 @@ class App extends Component {
           */}
 
       </div>
+      </BrowserRouter>
     );
   } 
 }

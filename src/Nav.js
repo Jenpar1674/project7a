@@ -5,13 +5,7 @@ import React from 'react';
     //render() { 
         const Nav = ()=> {
         return ( 
-        //     <nav class="main-nav">
-        //     <ul>
-        //       <li><a href='#'>Cats</a></li>
-        //       <li><a href='#'>Dogs</a></li>
-        //       <li><a href='#'>Computers</a></li>
-        //     </ul>
-        //   </nav>
+        
             
             <nav className=" main-nav nav-wrapper red darken-3">
             <div className="container">
