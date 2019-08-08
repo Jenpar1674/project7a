@@ -10,7 +10,7 @@ import {
   //Route
 } from 'react-router-dom'
 //import axios from 'axios'
-import apiKey from '../config';
+//import apiKey from './config';
 class App extends Component {
   
   state= {
@@ -23,7 +23,9 @@ class App extends Component {
       <BrowserRouter>
       <div className="app">
       
-      <Search />
+      <Search search = {this.state.seacrh}/>
+
+      
         {/* <form className="search-form">
           <input type="search" name="search" placeholder="Search" required/>
           <button type="submit" className="search-button">

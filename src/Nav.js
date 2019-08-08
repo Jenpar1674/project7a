@@ -3,7 +3,7 @@ import React from 'react';
 //class Nav extends Component {
     
     //render() { 
-        const Nav = ()=> {
+        const Nav = (props)=> {
         return ( 
         
             
@@ -13,7 +13,7 @@ import React from 'react';
             <li><a href='https://google.com'>Guns</a></li>
             <li><a href='https://google.com'>Butterflies</a></li>
             <li><a href='https://google.com'>Rainbows</a></li>
-           
+            <li><a href='https://google.com'>Blue</a></li>
           </ul>
           </div>
         </nav>

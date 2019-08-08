@@ -4,8 +4,8 @@ class Photos extends Component {
     state = {  }
     render() { 
         return ( 
-<div className="photo-container">
-          <h2>Results</h2>
+<div className="photo-container" >
+          <h2 style = {{color: "royalblue", backgroundColor: "purple" }}>Results</h2>
           <ul>
             <li>
               <img src="https://farm5.staticflickr.com/4334/37032996241_4c16a9b530.jpg" alt="" />
@@ -19,6 +19,7 @@ class Photos extends Component {
             <li>
               <img src="https://farm5.staticflickr.com/4425/36337012384_ba3365621e.jpg" alt="" />
             </li>
+            
             </ul>
           </div>
 
