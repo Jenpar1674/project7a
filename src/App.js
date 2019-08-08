@@ -23,8 +23,7 @@ class App extends Component {
       <BrowserRouter>
       <div className="app">
       
-      <Search search = {this.state.seacrh}/>
-
+      <Search />
       
         {/* <form className="search-form">
           <input type="search" name="search" placeholder="Search" required/>
