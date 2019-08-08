@@ -27,7 +27,7 @@ a {
 
 .search-form button {
   outline: none;
-  background-color: #438bbd;
+  background-color: purple;
   border: none;
   padding: 0px 15px;
   border-radius: 0 0.35em 0.35em 0;
@@ -37,7 +37,7 @@ a {
 input {
   font-size: 1em;
   width: 100%;
-  background-color: #edeff0;
+  background-color: rgb(173, 157, 189);
   padding: 10px 15px;
   border: 3px solid #d7dbdf;
   border-right: none;
@@ -52,10 +52,10 @@ input {
 
 .main-nav a {
   display: block;
-  background: #438bbd;
+  background: purple;
   border-radius: 3px;
   padding: 5px;
-  color: #fff;
+  color: royalblue;
 }
 
 .main-nav .active,

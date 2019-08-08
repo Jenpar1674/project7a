@@ -7,7 +7,7 @@ import React from 'react';
         return ( 
         
             
-            <nav className=" main-nav nav-wrapper red darken-3">
+            <nav className="main-nav">
             <div className="container">
           <ul className = "span">
             <li><a href='https://google.com'>Guns</a></li>

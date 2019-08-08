@@ -4,7 +4,7 @@ class Photos extends Component {
     state = {  }
     render() { 
         return ( 
-<div className="photo-container red darken-3">
+<div className="photo-container">
           <h2>Results</h2>
           <ul>
             <li>
