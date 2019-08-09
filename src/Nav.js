@@ -1,5 +1,5 @@
 import React from 'react';
-import {Link, Navlink } from 'react-router-dom'
+import{ Navlink } from 'react-router-dom'
 //class Nav extends Component {
     
     //render() { 
@@ -9,9 +9,9 @@ import {Link, Navlink } from 'react-router-dom'
             
             <nav className="main-nav">
             <ul>
-            <li><link to='/gunshttps://google.com'>Guns</link></li>
-            <li><a href='https://google.com'>Butterflies</link></li>
-            <li><a href='https://google.com'>Bobcats</link></li>
+            <li><a href='https://google.com'>Guns</a></li>
+            <li><a href='https://google.com'>Butterflies</a></li>
+            <li><a href='https://google.com'>Bobcats</a></li>
             <li><a href='https://google.com'>Uniforms</a></li>
           </ul>
          

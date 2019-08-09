@@ -13,10 +13,17 @@ import {
 //import apiKey from './config';
 class App extends Component {
   
+ 
   state= {
+    searchResults: [],
+    guns: [],
+    butterflies:[],
+    bobcats:[],
+    uniforms:[],
+    title:'',
+    loading: false
 
-
-  }
+}
  render(){
     return (
 
