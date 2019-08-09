@@ -7,7 +7,7 @@ import Notfound from './Notfound';
 import {
   BrowserRouter,
   //Switch,
-  //Route
+  Route
 } from 'react-router-dom'
 //import axios from 'axios'
 //import apiKey from './config';
@@ -22,7 +22,7 @@ class App extends Component {
 
       <BrowserRouter>
       <div className="app">
-      
+        <Route path='/search' render={ ()=> <Search />}/>
       <Search />
       
         {/* <form className="search-form">
