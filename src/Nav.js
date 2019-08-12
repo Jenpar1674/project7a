@@ -1,5 +1,6 @@
 import React from 'react';
-import{ Navlink } from 'react-router-dom';
+//import{ Navlink } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 //class Nav extends Component {
     
     //render() { 
@@ -9,10 +10,10 @@ import{ Navlink } from 'react-router-dom';
             
             <nav className="main-nav">
             <ul id = "nav">
-            <li><Navlink to ='/guns'>Guns</Navlink></li>
+            {/* <li><Navlink to ='/guns'>Guns</Navlink></li>
             <li><Navlink>='https://google.com'>Butterflies</Navlink></li>
             <li><Navlink>='https://google.com'>Bobcats</Navlink></li>
-            <li><Navlink>='https://google.com'>Uniforms</Navlink></li>
+            <li><Navlink>='https://google.com'>Badges</Navlink></li> */}
           </ul>
          
         </nav>
@@ -22,4 +23,4 @@ import{ Navlink } from 'react-router-dom';
     
 }
  
-export default Nav;
+export default withRouter(Nav);

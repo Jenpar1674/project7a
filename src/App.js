@@ -6,7 +6,7 @@ import Photos from './Photos';
 import Notfound from './Notfound';
 import {
   BrowserRouter,
-  //Switch,
+   Switch,
   Route
 } from 'react-router-dom'
 //import axios from 'axios'
@@ -16,19 +16,22 @@ class App extends Component {
  
   state= {
     searchResults: [],
-    guns: [],
+    bobcats: [],
     butterflies:[],
-    bobcats:[],
-    uniforms:[],
+    badges:[],
     title:'',
     loading: false
 
 }
+
+
  render(){
     return (
 
       <BrowserRouter>
-      <div className="app">
+      <div className="container">
+
+        <Switch>
         <Route path='/search' render={ ()=> <Search />}/>
       <Search />
       
@@ -73,7 +76,7 @@ class App extends Component {
               <p>You search did not return any results. Please try again.</p>
             </li>
           */}
-
+      </Switch>
       </div>
       </BrowserRouter>
     );
