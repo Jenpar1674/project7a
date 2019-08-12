@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component } from './node_modules/react';
 //import {withRouter} from 'react-router-dom'
 
 export default class Search extends Component {

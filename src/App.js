@@ -1,12 +1,12 @@
 import React,{ Component } from 'react';
 import './App.css';
-import Search from "./components/Search";
+//import Search from "./Components/Search";
 // import Navbar from './components/Navbar';
 // import Photos from './components/Photos';
 // import Notfound from './components/Notfound';
-// import {BrowserRouter, Switch, Route} from 'react-router-dom'
+// import {BrowserRouter, Switch, } from 'react-router-dom'
 import axios from 'axios'
-import apiKey from './components/config';
+import apiKey from './Components/config';
 
 
 
