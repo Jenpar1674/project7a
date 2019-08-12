@@ -15,7 +15,7 @@ import { Link } from "react-router-dom";
             <ul id = "nav">
             <li><Link to='/butterflies'>Butterflies</Link></li>
             <li><Link to='/bobcats'>Bobcats</Link></li>
-            <li><Link to ='/badges'>Badges</Link></li>
+            <li><Link to='/badges'>Badges</Link></li>
           </ul>
          
         </nav>

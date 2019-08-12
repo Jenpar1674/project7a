@@ -1,45 +1,70 @@
 import React,{ Component } from 'react';
 import './App.css';
-import Search from './Search';
-import Navbar from './Navbar';
-import Photos from './Photos';
-import Notfound from './Notfound';
-import {
-  BrowserRouter,
-   Switch,
-  Route
-} from 'react-router-dom'
-//import axios from 'axios'
-//import apiKey from './config';
-class App extends Component {
+import Search from "./components/Search";
+import Navbar from './components/Navbar';
+import Photos from './components/Photos';
+import Notfound from './components/Notfound';
+// import {BrowserRouter, Switch, Route} from 'react-router-dom'
+import axios from 'axios'
+import apiKey from './components/config';
+import Header from './Header'
+
+
+export default class App extends Component {
   
- 
   state= {
-    searchResults: [],
+    pics: [ ],
     butterflies:[],
     bobcats: [],
     badges:[],
-    title:'',
-    loading: false
+    
 
 }
+  componentDidMount=(query='butterflies')=> {
+    axios.get(`https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=${apiKey}&tags=${query}&per_page=24&format=json&nojsoncallback=1`)
+    .then(res=>{
+      console.log(res)
+      this.setState({
+        butterflies: res.data.photos.photo,
 
-
+      })
+    })
+  }
+  
  render(){
-    return (
+    const {pics} = this.state;
+    const postlist =pics.length ? (
+      pics.map(pics=>{
+        return(
+          <div className ="pics card" key={pics.id}>
+            <div className="card-content">
+            <span className = "card-title">{pics.title}</span>
+            <p>{pics.body}</p>
+          </div>
+          </div>
 
-      <BrowserRouter>
-      <div className="container">
+        )
+      })
+    ):(
+      <div className="center">no pics yet</div>
+    )
+  return (
+    <div className="">
+      {postlist}
+    </div>)
 
-      <Switch >
-              <Route exact path="/"  />
-              <Route path="/butterflies" />
+      // <BrowserRouter>
+      /* <div className="container"> */
+
+       /* <Switch >
+             <Route exact path="/"  />
+               <Route path="/butterflies" />
               <Route path="/bobcats"  />
               <Route path="/badges" />
-            </Switch>
-      <Search />
-      
-        {/* <form className="search-form">
+     <Switch />
+       <Search />
+       */
+        /* <form className="search-form">
           <input type="search" name="search" placeholder="Search" required/>
           <button type="submit" className="search-button">
             <svg fill="#fff" height="24" viewBox="0 0 23 23" width="24" xmlns="http://www.w3.org/2000/svg">
@@ -47,18 +72,13 @@ class App extends Component {
               <path d="M0 0h24v24H0z" fill="none"/>
             </svg>
           </button>
-        </form> */}
-        <Navbar />
-        {/* <route path="/" component={Cats}/> */}
-        {/* <nav className="main-nav">
-          <ul>
-            <li><a href='https://google.com'>Cats</a></li>
-            <li><a href='https://google.com'>Dogs</a></li>
-            <li><a href='https://google.com'>Computers</a></li>
-          </ul>
-        </nav> */}
-        <Photos />
-        {/* <div className="photo-container">
+        </form> */
+        /* <Navbar /> */
+        
+          
+        
+        // <Photos />
+        /* <div className="photo-container">
           <h2>Results</h2>
           <ul>
             <li>
@@ -72,19 +92,19 @@ class App extends Component {
             </li>
             <li>
               <img src="https://farm5.staticflickr.com/4425/36337012384_ba3365621e.jpg" alt="" />
-            </li> */}
+            </li> */
             
-            <Notfound />
-            {/* <li className="not-found">
+            // <Notfound />
+            /* <li className="not-found">
               <h3>No Results Found</h3>
               <p>You search did not return any results. Please try again.</p>
             </li>
-          */}
+          */
      
-      </div>
-      </BrowserRouter>
-    );
+      // </div>
+      //</BrowserRouter>
+    // );
   } 
 }
 
-export default App;
+
