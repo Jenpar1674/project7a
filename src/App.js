@@ -1,7 +1,7 @@
 import React,{ Component } from 'react';
 import './App.css';
 import Search from './Search';
-import Nav from './Nav';
+import Navbar from './Navbar';
 import Photos from './Photos';
 import Notfound from './Notfound';
 import {
@@ -33,7 +33,7 @@ class App extends Component {
 
       <Switch >
               <Route exact path="/"  />
-              <Route path="/butterflies"  />
+              <Route path="/butterflies" />
               <Route path="/bobcats"  />
               <Route path="/badges" />
             </Switch>
@@ -48,7 +48,7 @@ class App extends Component {
             </svg>
           </button>
         </form> */}
-        <Nav />
+        <Navbar />
         {/* <route path="/" component={Cats}/> */}
         {/* <nav className="main-nav">
           <ul>

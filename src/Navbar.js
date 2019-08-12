@@ -3,10 +3,10 @@ import React from 'react';
 import { withRouter } from 'react-router-dom';
 import { Link } from "react-router-dom";
 
-//class Nav extends Component {
+//class Navbar extends Component {
     
     //render() { 
-        const Nav = ()=> {
+        const Navbar = ()=> {
         return ( 
             
           
@@ -25,4 +25,4 @@ import { Link } from "react-router-dom";
     
 }
  
-export default withRouter(Nav);
+export default withRouter(Navbar);

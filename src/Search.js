@@ -5,7 +5,8 @@ class Search extends Component {
   state = {
     searchInput: ''
 }
-handleClick=(e)=>{``
+
+handleClick=(e)=>{
     console.log(this.state)
 }
      
