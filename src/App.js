@@ -1,6 +1,6 @@
 import React,{ Component } from 'react';
 import './App.css';
-//import Search from "./Components/Search";
+//import Search from "./node_modules/Search";
 // import Navbar from './components/Navbar';
 // import Photos from './components/Photos';
 // import Notfound from './components/Notfound';

@@ -1,7 +1,7 @@
-import React from 'react';
+import React from './node_modules/react';
 //import{ Navlink } from 'react-router-dom';
-import { withRouter } from 'react-router-dom';
-import { Link } from "react-router-dom";
+import { withRouter } from 'react-router-dom.js';
+import { Link } from "react-router-dom.js";
 
 //class Navbar extends Component {
     
