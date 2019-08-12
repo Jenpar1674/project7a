@@ -1,13 +1,13 @@
 import React,{ Component } from 'react';
 import './App.css';
-import Search from "./components/Search";
-import Navbar from './components/Navbar';
-import Photos from './components/Photos';
-import Notfound from './components/Notfound';
+// import Search from "./components/Search";
+// import Navbar from './components/Navbar';
+// import Photos from './components/Photos';
+// import Notfound from './components/Notfound';
 // import {BrowserRouter, Switch, Route} from 'react-router-dom'
 import axios from 'axios'
 import apiKey from './components/config';
-import Header from './Header'
+
 
 
 export default class App extends Component {
@@ -62,7 +62,7 @@ export default class App extends Component {
               <Route path="/bobcats"  />
               <Route path="/badges" />
      <Switch />
-       <Search />
+    <Search />
        */
         /* <form className="search-form">
           <input type="search" name="search" placeholder="Search" required/>
