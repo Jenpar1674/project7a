@@ -1,23 +1,25 @@
 import React from 'react';
 //import{ Navlink } from 'react-router-dom';
 import { withRouter } from 'react-router-dom';
+import { Link } from "react-router-dom";
+
 //class Nav extends Component {
     
     //render() { 
-        const Nav = (props)=> {
+        const Nav = ()=> {
         return ( 
-        
+            
+          
             
             <nav className="main-nav">
             <ul id = "nav">
-            {/* <li><Navlink to ='/guns'>Guns</Navlink></li>
-            <li><Navlink>='https://google.com'>Butterflies</Navlink></li>
-            <li><Navlink>='https://google.com'>Bobcats</Navlink></li>
-            <li><Navlink>='https://google.com'>Badges</Navlink></li> */}
+            <li><Link to='/butterflies'>Butterflies</Link></li>
+            <li><Link to='/bobcats'>Bobcats</Link></li>
+            <li><Link to ='/badges'>Badges</Link></li>
           </ul>
          
         </nav>
-
+       
             )
          
     

@@ -16,8 +16,8 @@ class App extends Component {
  
   state= {
     searchResults: [],
-    bobcats: [],
     butterflies:[],
+    bobcats: [],
     badges:[],
     title:'',
     loading: false
@@ -31,8 +31,12 @@ class App extends Component {
       <BrowserRouter>
       <div className="container">
 
-        <Switch>
-        <Route path='/search' render={ ()=> <Search />}/>
+      <Switch >
+              <Route exact path="/"  />
+              <Route path="/butterflies"  />
+              <Route path="/bobcats"  />
+              <Route path="/badges" />
+            </Switch>
       <Search />
       
         {/* <form className="search-form">
@@ -76,7 +80,7 @@ class App extends Component {
               <p>You search did not return any results. Please try again.</p>
             </li>
           */}
-      </Switch>
+     
       </div>
       </BrowserRouter>
     );

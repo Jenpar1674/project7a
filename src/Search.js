@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import {
-withRouter,
-} from 'react-router-dom'
+import {withRouter} from 'react-router-dom'
 
 class Search extends Component {
-    
-handleClick=(e)=>{
+  state = {
+    searchInput: ''
+}
+handleClick=(e)=>{``
     console.log(this.state)
 }
      
@@ -29,4 +29,4 @@ handleClick=(e)=>{
     }
 }
  
-export default withRouter (Search);
+export default withRouter(Search);
