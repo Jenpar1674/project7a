@@ -6,7 +6,7 @@ import './App.css';
 // import Notfound from './components/Notfound';
 // import {BrowserRouter, Switch, } from 'react-router-dom'
 import axios from 'axios'
-import apiKey from './Components/config';
+import apiKey from '../config';
 
 
 
