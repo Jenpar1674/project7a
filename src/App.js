@@ -1,7 +1,7 @@
 import React,{ Component } from 'react';
 import './App.css';
 import Search from './Components/Search';
-import Navbar from './Navbar';
+import Navbar from './Components/Navbar';
 import Photos from './Components/Photos';
 //import Notfound from './Components/Notfound';
 import {BrowserRouter, Switch,Route,Redirect} from 'react-router-dom'
