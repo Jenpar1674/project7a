@@ -1,12 +1,12 @@
 import React,{ Component } from 'react';
 import './App.css';
-//import Search from "./node_modules/Search";
-// import Navbar from './components/Navbar';
-// import Photos from './components/Photos';
-// import Notfound from './components/Notfound';
+import Search from './Components/Search';
+//import Navbar from './Components/Navbar';
+// import Photos from './Components/Photos';
+//import Notfound from './Components/Notfound';
 // import {BrowserRouter, Switch, } from 'react-router-dom'
 import axios from 'axios'
-import apiKey from '../config';
+import apiKey from './Components/config';
 
 
 
@@ -32,25 +32,27 @@ export default class App extends Component {
   }
   
  render(){
-    const {pics} = this.state;
-    const postlist =pics.length ? (
-      pics.map(pics=>{
-        return(
-          <div className ="pics card" key={pics.id}>
-            <div className="card-content">
-            <span className = "card-title">{pics.title}</span>
-            <p>{pics.body}</p>
-          </div>
-          </div>
+    // const {pics} = this.state;
+    // const postlist =pics.length ? (
+    //   pics.map(pics=>{
+    //     return(
+    //       <div className ="pics card" key={pics.id}>
+    //         <div className="card-content">
+    //         <span className = "card-title">{pics.title}</span>
+    //         <p>{pics.body}</p>
+    //       </div>
+    //       </div>
 
-        )
-      })
-    ):(
-      <div className="center">no pics yet</div>
-    )
+    //     )
+    //   })
+    // ):(
+    //   <div className="center">no pics yet</div>
+    // )
   return (
-    <div className="">
-      {postlist}
+    <div>
+      <Search />
+      
+      
     </div>)
 
       // <BrowserRouter>
