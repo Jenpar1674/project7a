@@ -11,7 +11,7 @@ onSearchChange =(e)=>{
 }
      handleSubmit = e =>{
       e.preventDefault();
-      this.props.onSearch(this.state.searchText);
+      console.log(this.state.searchText);
       e.currentTarget.reset();
      }
 

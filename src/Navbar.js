@@ -1,7 +1,7 @@
 import React from 'react';
-//import{ Navlink } from 'react-router-dom';
+import{ Navlink } from 'react-router-dom.js';
 import { withRouter } from 'react-router-dom.js';
-import { Link } from "react-router-dom.js";
+//import { Link } from "react-router-dom.js";
 
 //class Navbar extends Component {
     
@@ -13,9 +13,9 @@ import { Link } from "react-router-dom.js";
             
             <nav className="main-nav">
             <ul id = "nav">
-            <li><Link to='/butterflies'>Butterflies</Link></li>
-            <li><Link to='/bobcats'>Bobcats</Link></li>
-            <li><Link to='/badges'>Badges</Link></li>
+            <li><Navlink to='/butterflies'>Butterflies</Navlink></li>
+            <li><Navlink to='/bobcats'>Bobcats</Navlink></li>
+            <li><Navlink to='/badges'>Badges</Navlink></li>
           </ul>
          
         </nav>

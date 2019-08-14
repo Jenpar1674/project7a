@@ -1,16 +1,16 @@
 import React,{ Component } from 'react';
 import './App.css';
 import Search from './Components/Search';
-//import Navbar from './Components/Navbar';
-// import Photos from './Components/Photos';
+import Navbar from './Navbar';
+import Photos from './Components/Photos';
 //import Notfound from './Components/Notfound';
-// import {BrowserRouter, Switch, } from 'react-router-dom'
+import {BrowserRouter, Switch,Route,Redirect} from 'react-router-dom'
 import axios from 'axios'
 import apiKey from './Components/config';
 
 
 
-export default class App extends Component {
+class App extends Component {
   
   state= {
     pics: [ ],
@@ -20,40 +20,51 @@ export default class App extends Component {
     
 
 }
-  componentDidMount=(query='butterflies')=> {
-    axios.get(`https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=${apiKey}&tags=${query}&per_page=24&format=json&nojsoncallback=1`)
-    .then(res=>{
-      console.log(res)
-      this.setState({
-        butterflies: res.data.photos.photo,
+componentDidMount=(query='butterflies')=> {
+  axios.get(`https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=${apiKey}&tags=${query}&per_page=24&format=json&nojsoncallback=1`)
+  .then(res=>{
+    console.log(res)
+    this.setState({
+      butterflies: res.data.photos.photo,
 
-      })
     })
-  }
+  })
+}
   
- render(){
-    // const {pics} = this.state;
-    // const postlist =pics.length ? (
-    //   pics.map(pics=>{
-    //     return(
-    //       <div className ="pics card" key={pics.id}>
-    //         <div className="card-content">
-    //         <span className = "card-title">{pics.title}</span>
-    //         <p>{pics.body}</p>
-    //       </div>
-    //       </div>
+  
+  
+      
+  
+      
+      
+    
+  
+  
+ render()
+{
+    return (
+<BrowserRouter>
+<Search></Search>
+<div className="container">
+<Switch>
+<Route exact path="/" render={() =>
+              <Redirect to='/butterflies' />
+            } />
 
-    //     )
-    //   })
-    // ):(
-    //   <div className="center">no pics yet</div>
-    // )
-  return (
-    <div>
-      <Search />
-      
-      
-    </div>)
+
+</Switch>
+
+
+</div>
+<Photos/>
+<Navbar></Navbar>
+
+</BrowserRouter>
+
+
+    )
+    
+    
 
       // <BrowserRouter>
       /* <div className="container"> */
@@ -106,7 +117,5 @@ export default class App extends Component {
       // </div>
       //</BrowserRouter>
     // );
-  } 
-}
-
-
+    }}
+    export default App;
