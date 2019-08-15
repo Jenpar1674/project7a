@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Grid, Jumbotron } from 'react-bootstrap'; 
 
-class  extends Component {
+class Header extends Component {
     state = {  }
     render() { 
         return ( <div> 
@@ -24,4 +24,4 @@ class  extends Component {
 
 
 
-export default Headers;
+export default Header;
