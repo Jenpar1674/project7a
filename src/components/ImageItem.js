@@ -1,6 +1,6 @@
 import React from 'react';
 
-const ImageItem = props =>
+const ImageItem = props =>(
   <li>
     <img src={props.url} alt=""/>
   </li>

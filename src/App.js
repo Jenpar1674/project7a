@@ -3,7 +3,7 @@ import './App.css';
 import Search from './Components/Search';
 import Navbar from './Components/Navbar';
 import Photos from './Components/Photos';
-import NotFound from './Components/NotFound';
+//import NotFound from './NotFound';
 //import {BrowserRouter, Switch,Route,Redirect} from 'react-router-dom'
 import axios from 'axios'
 import apiKey from './Components/config';
