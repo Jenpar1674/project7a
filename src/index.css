@@ -145,13 +145,13 @@ input {
   text-decoration:none;
   display: block;
   padding:5px 21px;
-  background:#5F3222;
+  background:rgb(61, 34, 95);
   color:#eee;
   float:left;
   text-align:center;
   border-top:2px solid #815444;
-  border-right:2px solid #3d1000;
-  border-bottom:2px solid #3d1000;
+  border-right:2px solid #080141;
+  border-bottom:2px solid #080141;
   border-left:2px solid #815444;
   }
   ul#nav li a:hover {

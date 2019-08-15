@@ -1,28 +1,21 @@
 import React from 'react';
-import{ Navlink } from 'react-router-dom.js';
-import { withRouter } from 'react-router-dom.js';
+// import{ NavLink } from 'react-router-dom';
+import { BrowserRouter as Router, NavLink} from 'react-router-dom';
 //import { Link } from "react-router-dom.js";
 
-//class Navbar extends Component {
-    
-    //render() { 
         const Navbar = ()=> {
         return ( 
             
-          
-            
+          <Router>
             <nav className="main-nav">
-            <ul id = "nav">
-            <li><Navlink to='/butterflies'>Butterflies</Navlink></li>
-            <li><Navlink to='/bobcats'>Bobcats</Navlink></li>
-            <li><Navlink to='/badges'>Badges</Navlink></li>
-          </ul>
-         
-        </nav>
-       
-            )
-         
-    
+              <ul id = "nav">
+                <li><NavLink to='/butterflies'>Butterflies</NavLink></li>
+                <li><NavLink to='/bobcats'>Bobcats</NavLink></li>
+                <li><NavLink to='/badges'>Badges</NavLink></li>
+              </ul>
+            </nav>
+          </Router>
+        )
 }
  
-export default withRouter(Navbar);
+export default Navbar;

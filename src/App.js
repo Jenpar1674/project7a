@@ -4,65 +4,69 @@ import Search from './Components/Search';
 import Navbar from './Components/Navbar';
 import Photos from './Components/Photos';
 //import Notfound from './Components/Notfound';
-import {BrowserRouter, Switch,Route,Redirect} from 'react-router-dom'
+//import {BrowserRouter, Switch,Route,Redirect} from 'react-router-dom'
 import axios from 'axios'
 import apiKey from './Components/config';
 
 
 
-class App extends Component {
+export default class App extends Component {
   
-  state= {
-    pics: [ ],
-    butterflies:[],
-    bobcats: [],
-    badges:[],
-    
+  constructor(){
+    super();
 
-}
-componentDidMount=(query='butterflies')=> {
+    this.state= {
+      pics: [],
+      butterflies:[],
+      bobcats: [],
+      badges:[],
+      query: 'butterflies'
+    };
+  }
+  
+
+
+
+
+componentDidMount(query){
   axios.get(`https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=${apiKey}&tags=${query}&per_page=24&format=json&nojsoncallback=1`)
   .then(res=>{
-    console.log(res)
     this.setState({
-      butterflies: res.data.photos.photo,
-
+      pics: res.data.photos.photo
     })
   })
+  .catch(error =>{console.log('Error fetching and parsing data', error);});
 }
+
+// performSearch=(query)=>
+ 
+      // bobcats:res.data.data,
+      // badges:res.data.data,
+
+    //});
+  //}
+render() {
+  console.log(this.state.pics);
+  return (
+  <div>
+      <div className = "main-header">
+          <div className = "inner">
+            <h1 className = "main-title">PicSearch</h1>
+            <Search />
+
+            <Navbar />
+          </div>
+      </div>
+
+      <div className="main-content">
+        <Photos pics={this.state.pics}/>
+      </div>
+  </div>
+);
+  }
+
   
-  
-  
-      
-  
-      
-      
-    
-  
-  
- render()
-{
-    return (
-<BrowserRouter>
-<Search></Search>
-<div className="container">
-<Switch>
-<Route exact path="/" render={() =>
-              <Redirect to='/butterflies' />
-            } />
 
-
-</Switch>
-
-
-</div>
-<Photos/>
-<Navbar></Navbar>
-
-</BrowserRouter>
-
-
-    )
     
     
 
@@ -117,5 +121,6 @@ componentDidMount=(query='butterflies')=> {
       // </div>
       //</BrowserRouter>
     // );
-    }}
-    export default App;
+    
+  
+}
