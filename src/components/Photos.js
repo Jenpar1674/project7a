@@ -1,6 +1,7 @@
 import React from 'react';
 
 const Photos = ({pics}) => (
+   <div className= "container">
     <ul>
           {pics.map(pic => 
             <li>
@@ -8,6 +9,7 @@ const Photos = ({pics}) => (
             </li>
           )}
     </ul>
+    </div>
 );
     
 

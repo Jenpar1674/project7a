@@ -8,7 +8,7 @@ import Photos from './Components/Photos';
 import axios from 'axios'
 import apiKey from './Components/config';
 import Header from './Components/Header';
-
+//import { Grid } from 'react-bootstrap';
 
 export default class App extends Component {
   
@@ -50,6 +50,8 @@ render() {
   return (
   
   <div>
+
+  
       <div className = "main-header">
           <div className = "inner">
             <h1 className = "main-title">PicSearch</h1>
