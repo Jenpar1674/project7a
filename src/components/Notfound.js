@@ -1,11 +1,11 @@
 import React from 'react';
 
-const Notfound = props=> (
-    <li className="not-found">
+const Notfound = (props)=> (
+    <div className="not-found">
         <i className="material-icons icon-gif">sentiment_very_dissatisfied</i>
         <h3>No Results Found</h3>
         <p>You search did not return any results. Please try again.</p>
-    </li>
+    </div>
 
 
     );
