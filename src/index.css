@@ -163,14 +163,4 @@ input {
   border-bottom:2px solid #c59888;
   border-left:2px solid #815444;
   }
-  .jumbotron {
-    background-color: violet; 
-  }
-    h1{
-      color: rgb(50, 50, 160);
-    }
-    p{
-      color: rgb(50, 50, 160);
-      font-size: 150%;
-    }
   

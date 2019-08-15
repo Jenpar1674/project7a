@@ -1,17 +1,15 @@
-import React, { Component } from './node_modules/react';
+import React from 'react';
 
-class Notfound extends Component {
+const Notfound = props=> (
+    <li className="not-found">
+        <i className="material-icons icon-gif">sentiment_very_dissatisfied</i>
+        <h3>No Results Found</h3>
+        <p>You search did not return any results. Please try again.</p>
+    </li>
+
+
+    );
     
-    render() { 
-        return ( 
-            <li className="not-found">
-            <h3>No Results Found</h3>
-            <p>You search did not return any results. Please try again.</p>
-          </li>
 
-
-         );
-    }
-}
  
 export default Notfound ;
