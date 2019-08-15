@@ -7,7 +7,7 @@ import Photos from './Components/Photos';
 //import {BrowserRouter, Switch,Route,Redirect} from 'react-router-dom'
 import axios from 'axios'
 import apiKey from './Components/config';
-
+import Header from './Components/Header';
 
 
 export default class App extends Component {
