@@ -48,10 +48,12 @@ componentDidMount(query='butterflies'){
 render() {
   console.log(this.state.pics);
   return (
+  
   <div>
       <div className = "main-header">
           <div className = "inner">
             <h1 className = "main-title">PicSearch</h1>
+            <Header />
             <Search />
 
             <Navbar />
