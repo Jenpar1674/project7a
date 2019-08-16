@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 
 const Notfound = (props)=> (
     <div className="not-found">
@@ -9,7 +9,4 @@ const Notfound = (props)=> (
 
 
     );
-    
-
- 
-export default Notfound ;
+    export default NotFound;
