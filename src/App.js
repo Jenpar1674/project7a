@@ -3,12 +3,12 @@ import './App.css';
 import Search from './Components/Search';
 import Navbar from './Components/Navbar';
 import Photos from './Components/Photos';
-import NotFound from './Components/NotFound';
+
 //import {BrowserRouter, Switch,Route,Redirect} from 'react-router-dom'
 import axios from 'axios'
 import apiKey from './Components/config';
 import Header from './Components/Header';
-
+import NotFound from '/Components/NotFound';
 
 export default class App extends Component {
   
@@ -58,6 +58,7 @@ render()
 
             <Navbar />
           </div>
+          <NotFound />
       </div>
       <div className="main-content">
         {
