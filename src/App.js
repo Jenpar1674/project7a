@@ -8,7 +8,7 @@ import Photos from './Components/Photos';
 import axios from 'axios'
 import apiKey from './Components/config';
 import Header from './Components/Header';
-import NotFound from '/Components/NotFound';
+import NotFound from '/NotFound';
 
 export default class App extends Component {
   
