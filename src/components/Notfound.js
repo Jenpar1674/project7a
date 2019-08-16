@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Notfound = (props)=> (
+const NotFound = (props)=> (
     <div className="not-found">
         <i className="material-icons icon-gif">sentiment_very_dissatisfied</i>
         <h3>No Results Found</h3>
