@@ -1,15 +1,16 @@
 import React,{ Component } from 'react';
 import './App.css';
-import Search from './Components/Search';
-import Navbar from './Components/Navbar';
-import Photos from './Components/Photos';
+import Search from './components/Search';
+import Navbar from './components/Navbar';
+import Photos from './components/Photos';
 //import { Grid ,Jumbotron } from 'react-bootstrap';
 import {Route} from 'react-router-dom'
 import axios from 'axios'
-import apiKey from './Components/config';
-import Header from './Components/Header';
-import NotFound from './Components/NotFound';
+import apiKey from './components/config';
+import Header from './components/Header';
+import NotFound from './components/NotFound';
 import { BrowserRouter, Switch } from 'react-router-dom/cjs/react-router-dom.min';
+import Results from './components/Results';
 
 export default class App extends Component {
   
@@ -21,7 +22,8 @@ export default class App extends Component {
       butterflies:[], //array for specified categories
       bobcats: [],
       badges:[],
-      loading:true
+      loading:true,
+      title:[]
       
     };
   }
@@ -37,8 +39,15 @@ componentDidMount(){
   this.searchBadges();
 
 }
+
+ componentWillUnmount() {
+    clearInterval(this.state.photos);
+    clearInterval(this.state.dogs);
+    clearInterval(this.state.cats);
+    clearInterval(this.state.computer);
+  }
 //API fetching using axios
-performSearch=(query='rainbows')=>//image array and index pages - default query so it starts with something
+performSearch=(query="smiley")=>//image array and index pages - default query so it starts with something
   axios.get(`https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=${apiKey}&tags=${query}&per_page=24&format=json&nojsoncallback=1`)
   .then(res=>{
     this.setState({
@@ -94,15 +103,16 @@ render()
           <div className = "inner">
             
             <Header />
-
+            <Results/>
 
               {/* Search form rendered to index and search pages  */}
-               
+              {/* <Route exact path="/" component={() => <Search onSearch={this.performSearch} />} /> */}
               <Route path="/search" component={() => <Search onSearch={this.performSearch} />} />
+              
+              <div className="performSearch">
               <Search onSearch={this.performSearch} />
-
-            <Navbar data= {this.performSearch} />
-            
+                <Navbar data= {this.performSearch} />
+           
             <Switch>
               {/* renders data to the proper url pages showing each unique image array   */}
                 <Route exact path="/search" component={() => <Photos pics={this.state.pics} />} />
@@ -125,7 +135,7 @@ render()
       
       </div>
   </div>
-
+</div>
   </BrowserRouter>
 );}
   }

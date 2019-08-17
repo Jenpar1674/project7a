@@ -3,16 +3,16 @@ import React, { Component } from 'react';
 
 export default class Search extends Component {
   state = {
-    searchText: ''
+    text: ''
 }
 
 onSearchChange =(e)=>{
-    (this.setState)({ searchText:e.target.value});
+    (this.setState)({ text:e.target.value});
 }
      handleSubmit = e =>{
       e.preventDefault();
       this.props.onSearch(this.query.value);
-      console.log(this.state.searchText);
+      console.log(this.state.text);
       e.currentTarget.reset();
      }
 
