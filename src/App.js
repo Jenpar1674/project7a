@@ -18,12 +18,12 @@ export default class App extends Component {
     super();
 
     this.state= {
-      pics: [], //picture array for general search
+      pics:[], //picture array for general search
       butterflies:[], //array for specified categories
       bobcats: [],
       badges:[],
-      loading:true,
-      title:[]
+      loading:true
+      
       
     };
   }
@@ -40,14 +40,9 @@ componentDidMount(){
 
 }
 
- componentWillUnmount() {
-    clearInterval(this.state.photos);
-    clearInterval(this.state.dogs);
-    clearInterval(this.state.cats);
-    clearInterval(this.state.computer);
-  }
+ 
 //API fetching using axios
-performSearch=(query="smiley")=>//image array and index pages - default query so it starts with something
+performSearch=(query='sunsets')=>//image array and index pages - default query so it starts with something
   axios.get(`https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=${apiKey}&tags=${query}&per_page=24&format=json&nojsoncallback=1`)
   .then(res=>{
     this.setState({
@@ -91,29 +86,30 @@ searchBadges=(query='badges')=>//image array for badges
   .catch(error =>{console.log('Error fetching and parsing data', error);
 });
 ;
-
-render()
-{
+render(){
   console.log(this.state.pics);
   return (
-
-    <BrowserRouter>
+  <BrowserRouter>
     <div>
-      <div className = "main-header">
-          <div className = "inner">
-            
-            <Header />
-            <Results/>
-
-              {/* Search form rendered to index and search pages  */}
-              {/* <Route exact path="/" component={() => <Search onSearch={this.performSearch} />} /> */}
-              <Route path="/search" component={() => <Search onSearch={this.performSearch} />} />
-              
-              <div className="performSearch">
-              <Search onSearch={this.performSearch} />
-                <Navbar data= {this.performSearch} />
+    
+  <Header />
            
-            <Switch>
+
+      {/* Search form rendered to index and search pages  */}
+      <Route exact path="/" component={() => <Search onSearch={this.performSearch} />} />
+      <Route path="/search" component={() => <Search onSearch={this.performSearch} />} />
+              
+      <div className="performSearch">
+        <Navbar data= {this.performSearch} />
+      <Results/>  
+          <Route exact path= "/butterflies" render ={ () => <Results title = "Butterflies" />} />
+          <Route exact path= "/bobcats" render ={ () => <Results title = "Bobcats" />} />
+          <Route exact path= "/badges" render ={ () => <Results title = "Badges" />} />
+          <Route exact path= "/" render ={ () => <Results title = "Cool Pics Below" />} />
+          <Route exact path="/search" render={ () => <Results title = "Cool Pics Below"/>} />
+
+      <div className="main-content">
+              <Switch>
               {/* renders data to the proper url pages showing each unique image array   */}
                 <Route exact path="/search" component={() => <Photos pics={this.state.pics} />} />
                 <Route exact path="/butterflies" component={() => <Photos pics={this.state.butterflies} />} />
@@ -124,18 +120,13 @@ render()
               </Switch>
 
           </div>
-          {/* <NotFound /> */}
+          
       </div>
-      <div className="main-content">
-        {
-          (this.state.loading)
-          ? <p>Loading..</p>
-          : <Photos pics={this.state.pics} />
-        }
       
+        
       </div>
-  </div>
-</div>
+  
+
   </BrowserRouter>
 );}
   }
