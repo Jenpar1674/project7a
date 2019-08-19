@@ -3,7 +3,7 @@ import './App.css';
 import Search from './components/Search';
 import Navbar from './components/Navbar';
 import Photos from './components/Photos';
-//import { Grid ,Jumbotron } from 'react-bootstrap';
+
 import {Route} from 'react-router-dom'
 import axios from 'axios'
 import apiKey from './components/config';
@@ -101,9 +101,9 @@ render(){
               
       <div className="performSearch">
       
-        <Navbar onClick= {this.performSearch} />
+        {/* <Navbar onClick= {this.performSearch} /> */}
         
-          
+          <Navbar/>
             
       <Results/>  
           <Route exact path= "/butterflies" render ={ () => <Results title = "Butterflies" />} />
@@ -113,12 +113,9 @@ render(){
           <Route exact path="/search" render={ () => <Results title = "Cool Pics Below"/>} />
         
       <div className="main-content">
-      {
-        (this.state.loading)
-            ? <h3>Loading...</h3>
-            :
+      
               <Switch>
-              /* renders data to the proper url pages showing each unique image array   */
+              {/* renders data to the proper url pages showing each unique image array   */}
                 <Route exact path="/search" component={() => <Photos pics={this.state.pics} />} />
                 <Route exact path="/butterflies" component={() => <Photos pics={this.state.butterflies} />} />
                 <Route exact path="/bobcats" component={() => <Photos pics={this.state.bobcats} />} />
