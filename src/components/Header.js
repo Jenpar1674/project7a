@@ -7,12 +7,12 @@ class Header extends Component {
         return ( <div> 
          
                         <Jumbotron>
-                
+            
                     <h1>Jen's React Gallery App</h1>
-                    <p>Browse through images courtesy of Flickr</p>
+                    <h2>Browse through images courtesy of Flickr</h2>
                 
                 
-              
+                   
                         </Jumbotron>
        
 

@@ -18,12 +18,14 @@ const Photos = (props) => {
   }
 
   
-return(
-    <div className="photo-container">
-          <ul>
-          {pics}
-          </ul>
-    </div>);
+  return(
+      <div className="photo-container">
+            <ul>
+            {pics}
+            </ul>
+      </div>
+      
+  )
  
 
  }

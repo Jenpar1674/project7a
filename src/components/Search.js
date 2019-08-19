@@ -15,11 +15,8 @@ export default class Search extends Component {
 
   //Called when form is submitted
   handleSubmit = e => {
-    this.props.history.push(
-      `/search/${this.state.searchText}`
-    );
     e.preventDefault();
-    this.props.onSearch(this.query.value);
+    this.props.onSearch(this.state.searchText);
     e.currentTarget.reset();
   }
 
