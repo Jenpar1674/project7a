@@ -19,7 +19,8 @@ const Photos = (props) => {
 
   
   return(
-      <div className="photo-container">
+      <div className="photo-container li:hover img ">
+        
             <ul>
             {pics}
             </ul>

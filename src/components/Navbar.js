@@ -2,7 +2,7 @@ import React,{Component} from 'react';
 // import{ NavLink } from 'react-router-dom';
 import { withRouter, NavLink} from 'react-router-dom';
 //import { Link } from "react-router-dom.js";
- import Search from './Search';
+ //import Search from './Search';
 
 
  
@@ -17,12 +17,13 @@ class Navbar extends Component {
     // Builds top navigation with NavLink
     return (
       <header>
-        <nav className="main-nav">
+        <nav className="main-nav nav-pill">
           <ul>
-            {/* <Search onSubmit={this.handleRoute}/> */}
+          
             <li><NavLink to="/butterflies">Butterflies</NavLink></li>
             <li><NavLink to="/bobcats">Bobcats</NavLink></li>
             <li><NavLink to="/badges">Badges</NavLink></li>
+          
           </ul>
           </nav>
       </header>

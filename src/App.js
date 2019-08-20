@@ -8,9 +8,10 @@ import {Route} from 'react-router-dom'
 import axios from 'axios'
 import apiKey from './components/config';
 import Header from './components/Header';
-import NotFound from './components/NotFound';
+//import NotFound from './components/NotFound';
 import { BrowserRouter, Switch } from 'react-router-dom';
 import Results from './components/Results';
+//import { Jumbotron } from 'react-bootstrap';
 
 export default class App extends Component {
   
@@ -30,7 +31,7 @@ export default class App extends Component {
 
 
 componentDidMount(){
-  //this.performSearch('');
+  this.performSearch('rainbows');
   this.performSearch('butterflies');
   this.performSearch('bobcats');
   this.performSearch('badges');
@@ -64,14 +65,14 @@ performSearch=(query)=>{//image array and index pages - default query so it star
 
   }else {
     this.setState({
-      pics: response.data.photos.photo,
+      rainbows: response.data.photos.photo,
       loading: false
     });
     console.log(this.state.pics);
 
   }
 })
-.catch(error => {
+.catch((error) => {
   console.log('Error fetching and parsing data', error);
 });
 }
@@ -114,7 +115,9 @@ performSearch=(query)=>{//image array and index pages - default query so it star
 render(){
   // console.log(this.state.pics);
   return (
+   
   <BrowserRouter>
+    <div className="jumbotron">
     <div className="container">
     <Header/>
     <Route
@@ -122,50 +125,58 @@ render(){
                   <Search {...props} onSearch={this.performSearch} />
                 }
               />
+              <Route exact path="/" component={() => <Search onSearch={this.performSearch} />} />
+              <Route path="/search" component={() => <Search onSearch={this.performSearch} />} />
+
     <Navbar onClick={this.search}/>
-    {/* <Search onSearch={this.performSearch} />
-    <Navbar onClick={this.search}/>
+    
         {
           (this.state.loading)
           ? <h4>Loading..</h4>
           : 
-         */}
+         
         <Switch>
         Route exact path="/"  />
                   <Route path="/butterflies" render={ () =>
                     (this.state.loading)
-                    ? <p>Loading...</p>
+                    ? <h4>Loading...</h4>
                     : <Photos pics={this.state.butterflies} query="butterflies" />
                   } />
                   <Route path="/bobcats" render={ () =>
                     (this.state.loading)
-                    ? <p>Loading...</p>
+                    ? <h4>Loading...</h4>
                     : <Photos pics={this.state.bobcats} query="bobcats" />
                   } />
                   <Route path="/badges" render={ () =>
                     (this.state.loading)
-                    ? <p>Loading...</p>
+                    ? <h4>Loading...</h4>
                     : <Photos pics={this.state.badges} query="badges" />
                   } />
                   <Route path="/search/:topic" render={ () =>
                     (this.state.loading)
-                    ? <p>Loading...</p>
-                    : <Photos pics={this.state.pics} />
+                    ? <h4>Loading...</h4>
+                    : <Photos pics={this.state.pics} query=''/>
                   } />
         
-
+        <Results/>  
+          <Route exact path= "/butterflies" render ={ () => <Results title = "Butterflies" />} />
+          <Route exact path= "/bobcats" render ={ () => <Results title = "Bobcats" />} />
+        <Route exact path= "/badges" render ={ () => <Results title = "Badges" />} />
+      <Route exact path= "/" render ={ () => <Results title = "Cool Pics Below" />} />
+     <Route exact path="/search" render={ () => <Results title = "Cool Pics Below"/>} />
+      
+<Route/>
         </Switch>
         }
       </div>
-  
-
+     
+</div>
 </BrowserRouter>
+
 );}
   }    
 
       // {/* Search form rendered to index and search pages  */}
-      // <Route exact path="/" component={() => <Search onSearch={this.performSearch} />} />
-      // <Route path="/search" component={() => <Search onSearch={this.performSearch} />} />
               
       // <div className="performSearch">
       
@@ -173,12 +184,7 @@ render(){
         
          
             
-      // <Results/>  
-      //     <Route exact path= "/butterflies" render ={ () => <Results title = "Butterflies" />} />
-      //     <Route exact path= "/bobcats" render ={ () => <Results title = "Bobcats" />} />
-      //     <Route exact path= "/badges" render ={ () => <Results title = "Badges" />} />
-      //     <Route exact path= "/" render ={ () => <Results title = "Cool Pics Below" />} />
-      //     <Route exact path="/search" render={ () => <Results title = "Cool Pics Below"/>} />
+      
         
       // <div className="main-content">
       

@@ -4,7 +4,7 @@ import { Jumbotron } from 'react-bootstrap';
 class Header extends Component {
     state = {}
     render() { 
-        return ( <div> 
+        return ( <div className="text-center"> 
          
                         <Jumbotron>
             
