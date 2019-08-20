@@ -1,16 +1,16 @@
 import React,{ Component } from 'react';
 import './App.css';
-import Search from './Components/Search';
-import Navbar from './Components/Navbar';
-import Photos from './Components/Photos';
+import Search from './components/Search';
+import Navbar from './components/Navbar';
+import Photos from './components/Photos';
 
 import {Route} from 'react-router-dom'
 import axios from 'axios'
-import apiKey from './Components/config';
-import Header from './Components/Header';
-import NotFound from './Components/NotFound';
+import apiKey from './components/config';
+import Header from './components/Header';
+import NotFound from './components/NotFound';
 import { BrowserRouter, Switch } from 'react-router-dom';
-import Results from './Components/Results';
+import Results from './components/Results';
 
 export default class App extends Component {
   
