@@ -31,7 +31,7 @@ export default class App extends Component {
 
 
 componentDidMount(){
-  this.performSearch('sunsets);
+  this.performSearch('sunsets');
   this.performSearch('butterflies');
   this.performSearch('bobcats');
   this.performSearch('badges');
