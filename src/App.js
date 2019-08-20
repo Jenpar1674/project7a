@@ -31,7 +31,7 @@ export default class App extends Component {
 
 
 componentDidMount(){
-  this.performSearch('rainbows');
+  this.performSearch('');
   this.performSearch('butterflies');
   this.performSearch('bobcats');
   this.performSearch('badges');
@@ -65,7 +65,7 @@ performSearch=(query)=>{//image array and index pages - default query so it star
 
   }else {
     this.setState({
-      rainbows: response.data.photos.photo,
+      pics: response.data.photos.photo,
       loading: false
     });
     console.log(this.state.pics);
@@ -124,9 +124,9 @@ render(){
                 render={props =>
                   <Search {...props} onSearch={this.performSearch} />
                 }
-              />
-              <Route exact path="/" component={() => <Search onSearch={this.performSearch} />} />
-              <Route path="/search" component={() => <Search onSearch={this.performSearch} />} />
+              />  
+                    <Route exact path="/" component={() => <Search onSearch={this.performSearch} />} />
+                    <Route path="/search" component={() => <Search onSearch={this.performSearch} />} />
 
     <Navbar onClick={this.search}/>
     
@@ -157,16 +157,9 @@ render(){
                     ? <h4>Loading...</h4>
                     : <Photos pics={this.state.pics} query=''/>
                   } />
-        
         <Results/>  
-          <Route exact path= "/butterflies" render ={ () => <Results title = "Butterflies" />} />
-          <Route exact path= "/bobcats" render ={ () => <Results title = "Bobcats" />} />
-        <Route exact path= "/badges" render ={ () => <Results title = "Badges" />} />
-      <Route exact path= "/" render ={ () => <Results title = "Cool Pics Below" />} />
-     <Route exact path="/search" render={ () => <Results title = "Cool Pics Below"/>} />
-      
-<Route/>
-        </Switch>
+<Photos pics/>       
+ </Switch>
         }
       </div>
      
@@ -185,6 +178,11 @@ render(){
          
             
       
+      //     <Route exact path= "/butterflies" render ={ () => <Results title = "Butterflies" />} />
+      //     <Route exact path= "/bobcats" render ={ () => <Results title = "Bobcats" />} />
+      //     <Route exact path= "/badges" render ={ () => <Results title = "Badges" />} />
+      //     <Route exact path= "/" render ={ () => <Results title = "Cool Pics Below" />} />
+      //     <Route exact path="/search" render={ () => <Results title = "Cool Pics Below"/>} />
         
       // <div className="main-content">
       
