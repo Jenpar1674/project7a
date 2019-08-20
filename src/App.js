@@ -8,7 +8,7 @@ import {Route} from 'react-router-dom'
 import axios from 'axios'
 import apiKey from './components/config';
 import Header from './components/Header';
-//import NotFound from './components/NotFound';
+import NotFound from './components/NotFound';
 import { BrowserRouter, Switch } from 'react-router-dom';
 import Results from './components/Results';
 //import { Jumbotron } from 'react-bootstrap';
@@ -31,7 +31,7 @@ export default class App extends Component {
 
 
 componentDidMount(){
-  this.performSearch('');
+  this.performSearch('sunsets);
   this.performSearch('butterflies');
   this.performSearch('bobcats');
   this.performSearch('badges');
@@ -120,44 +120,42 @@ render(){
     <div className="jumbotron">
     <div className="container">
     <Header/>
-    <Route
-                render={props =>
-                  <Search {...props} onSearch={this.performSearch} />
-                }
-              />  
-                    <Route exact path="/" component={() => <Search onSearch={this.performSearch} />} />
-                    <Route path="/search" component={() => <Search onSearch={this.performSearch} />} />
+    
+    <Search onSearch={this.performSearch}/>           
+      
 
     <Navbar onClick={this.search}/>
     
-        {
-          (this.state.loading)
-          ? <h4>Loading..</h4>
-          : 
-         
         <Switch>
         Route exact path="/"  />
                   <Route path="/butterflies" render={ () =>
                     (this.state.loading)
-                    ? <h4>Loading...</h4>
-                    : <Photos pics={this.state.butterflies} query="butterflies" />
+                    ? <h2>Loading...</h2>
+                    : <Photos pics={this.state.butterflies} query="butterflies" Results title = "Butterflies" />
                   } />
                   <Route path="/bobcats" render={ () =>
                     (this.state.loading)
-                    ? <h4>Loading...</h4>
+                    ? <h2>Loading...</h2>
                     : <Photos pics={this.state.bobcats} query="bobcats" />
                   } />
                   <Route path="/badges" render={ () =>
                     (this.state.loading)
-                    ? <h4>Loading...</h4>
+                    ? <h2>Loading...</h2>
                     : <Photos pics={this.state.badges} query="badges" />
                   } />
-                  <Route path="/search/:topic" render={ () =>
+                  <Route path="/search" render={ () =>
                     (this.state.loading)
-                    ? <h4>Loading...</h4>
+                    ? <h2>Loading...</h2>
                     : <Photos pics={this.state.pics} query=''/>
                   } />
         <Results/>  
+        {/* renders data to the proper url pages showing each unique image array   */}
+                 <Route exact path="/search" component={() => <Photos pics={this.state.pics} />} />
+                <Route exact path="/butterflies" component={() => <Photos pics={this.state.butterflies} />} />
+                <Route exact path="/bobcats" component={() => <Photos pics={this.state.bobcats} />} />
+                <Route exact path="/badges" component={() => <Photos pics={this.state.badges} />} />
+                <Route exact path='/' component={() => <Photos pics={this.state.pics} />} />
+               <Route component={() => <NotFound />} />
 <Photos pics/>       
  </Switch>
         }

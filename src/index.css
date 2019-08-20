@@ -123,3 +123,23 @@ input {
     width: 100px;
   }
 }
+.container {
+	text-align: center;
+	border: 1px solid blueviolet;
+}
+.container ul {
+	border: 2px solid blue;
+	display: inline-block;
+	margin: 10px 0;
+	padding: 2px;
+}
+.container li {
+	display: inline-block;
+}
+.container li a {
+	display: inline-block;
+	background: rgb(68, 68, 68);
+	color: rgb(255, 255, 255);
+	padding: 5px;
+	text-decoration: none;
+}

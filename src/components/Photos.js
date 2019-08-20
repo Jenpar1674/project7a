@@ -1,7 +1,7 @@
 import React from 'react';
 import NotFound from './NotFound';
 import ImageItem from './ImageItem';
-
+import Results from './Results';
 const Photos = (props) => {
   
   const results = props.pics;
@@ -20,7 +20,7 @@ const Photos = (props) => {
   
   return(
       <div className="photo-container li:hover img ">
-        
+        <Results/>
             <ul>
             {pics}
             </ul>
