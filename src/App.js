@@ -31,10 +31,11 @@ export default class App extends Component {
 
 
 componentDidMount(){
-  this.performSearch('sunsets');
+  
   this.performSearch('butterflies');
   this.performSearch('bobcats');
   this.performSearch('badges');
+  this.performSearch(); // this might not be needed
 }
 
  
@@ -119,19 +120,19 @@ render(){
   <BrowserRouter>
     <div className="jumbotron">
     <div className="container">
-    <Header/>
+    <Header/ >
     
     <Search onSearch={this.performSearch}/>           
       
 
-    <Navbar onClick={this.search}/>
+    <Navbar onClick={this.performSearch}/>
     
         <Switch>
         Route exact path="/"  />
                   <Route path="/butterflies" render={ () =>
                     (this.state.loading)
                     ? <h2>Loading...</h2>
-                    : <Photos pics={this.state.butterflies} query="butterflies" Results title = "Butterflies" />
+                    : <Photos pics={this.state.butterflies} query="butterflies" />
                   } />
                   <Route path="/bobcats" render={ () =>
                     (this.state.loading)
@@ -146,17 +147,22 @@ render(){
                   <Route path="/search" render={ () =>
                     (this.state.loading)
                     ? <h2>Loading...</h2>
-                    : <Photos pics={this.state.pics} query=''/>
+                    : <Photos pics={this.state.pics}/>
                   } />
-        <Results/>  
+
+
+            
         {/* renders data to the proper url pages showing each unique image array   */}
-                 <Route exact path="/search" component={() => <Photos pics={this.state.pics} />} />
+                 {/* <Route exact path="/search" component={() => <Photos pics={this.state.pics} />} />
                 <Route exact path="/butterflies" component={() => <Photos pics={this.state.butterflies} />} />
                 <Route exact path="/bobcats" component={() => <Photos pics={this.state.bobcats} />} />
                 <Route exact path="/badges" component={() => <Photos pics={this.state.badges} />} />
-                <Route exact path='/' component={() => <Photos pics={this.state.pics} />} />
-               <Route component={() => <NotFound />} />
-<Photos pics/>       
+                <Route exact path='/' component={() => <Photos pics={this.state.pics} />} /><Results/>
+               <Route component={() => <NotFound />} /> */}
+
+      
+              
+{/* <Photos pics/>        */}
  </Switch>
         }
       </div>
@@ -166,8 +172,8 @@ render(){
 
 );}
   }    
-
-      // {/* Search form rendered to index and search pages  */}
+/* 
+      {/* // Search form rendered to index and search pages 
               
       // <div className="performSearch">
       
@@ -176,23 +182,18 @@ render(){
          
             
       
-      //     <Route exact path= "/butterflies" render ={ () => <Results title = "Butterflies" />} />
-      //     <Route exact path= "/bobcats" render ={ () => <Results title = "Bobcats" />} />
-      //     <Route exact path= "/badges" render ={ () => <Results title = "Badges" />} />
-      //     <Route exact path= "/" render ={ () => <Results title = "Cool Pics Below" />} />
-      //     <Route exact path="/search" render={ () => <Results title = "Cool Pics Below"/>} />
-        
+      //     
       // <div className="main-content">
       
       //         <Switch>
-      //         {/* renders data to the proper url pages showing each unique image array   */}
+      //         {/* renders data to the proper url pages showing each unique image array   */
       //           <Route exact path="/search" component={() => <Photos pics={this.state.pics} />} />
       //           <Route exact path="/butterflies" component={() => <Photos pics={this.state.butterflies} />} />
       //           <Route exact path="/bobcats" component={() => <Photos pics={this.state.bobcats} />} />
       //           <Route exact path="/badges" component={() => <Photos pics={this.state.badges} />} />
       //           <Route exact path='/' component={() => <Photos pics={this.state.pics} />} />
       //           <Route component={() => <NotFound />} />
-      //         </Switch>
+      //         </Switch> */}
       //   }
 
       //     </div>
@@ -201,7 +202,7 @@ render(){
       
         
       // </div>
-  
+   
 
   
 // );}
