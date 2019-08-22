@@ -37,7 +37,12 @@ componentDidMount(){
   this.performSearch('badges');
   this.performSearch(); // this might not be needed
 }
-
+componentWillUnmount() {
+  clearInterval(this.state.butterflies);
+  clearInterval(this.state.bobcats);
+  clearInterval(this.state.badges);
+  clearInterval();
+}
  
 //API fetching using axios
 performSearch=(query)=>{//image array and index pages - default query so it starts with something
@@ -128,7 +133,29 @@ render(){
     <Navbar onClick={this.performSearch}/>
     
         <Switch>
-        Route exact path="/"  />
+
+
+        <Route exact path='/' render={ () => ( 
+                  <div className="main-content">
+                    {
+                      this.state.loading ? <p> Loading ...</p> : this.state.pics ? <Photos pics={ this.state.pics } /> : <NotFound /> 
+                    }
+                  </div>
+                  )} 
+                />
+                <Route path='/search/' render={ () => ( 
+                  <div className="main-content">
+                    {
+                      this.state.loading ? <p> Loading ...</p> : this.state.pics ? <Photos pics={ this.state.pics } /> : <NotFound /> 
+                    }
+                  </div>
+                  )} 
+                />
+                <Route path='/tags/butterflies' render={() => <Photos pics={ this.state.butterflies } />} />
+                <Route path='/tags/bobcats' render={() => <Photos pics={ this.state.bobcats } />} />
+                <Route path='/tags/badges' render={() => <Photos pics={ this.state.badges } />} />
+                <Route component={NotFound} />
+        {/* Route exact path="/"  />
                   <Route path="/butterflies" render={ () =>
                     (this.state.loading)
                     ? <h2>Loading...</h2>
@@ -144,12 +171,12 @@ render(){
                     ? <h2>Loading...</h2>
                     : <Photos pics={this.state.badges} query="badges" />
                   } />
-                  <Route path="/" render={ () =>
+                  <Route path="/search" render={ () =>
                     (this.state.loading)
                     ? <h2>Loading...</h2>
                     : <Photos pics={this.state.pics}/>
                   } />
-
+ */}
 
             
         {/* renders data to the proper url pages showing each unique image array   */}

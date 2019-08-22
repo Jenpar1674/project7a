@@ -1,7 +1,8 @@
 //Import React library
 import React, { Component } from 'react';
+import {withRouter} from 'react-router-dom'
 
-export default class Search extends Component {
+class Search extends Component  {
 
   //Gets updated with onSearchChange
   state = {
@@ -16,7 +17,8 @@ export default class Search extends Component {
   //Called when form is submitted
   handleSubmit = e => {
     e.preventDefault();
-  
+    const path = `/search/${this.state.searchText}`;
+    this.props.history.push(path);
     this.props.onSearch(this.state.searchText);
     e.currentTarget.reset();
   }
@@ -88,4 +90,4 @@ export default class Search extends Component {
 //     }
 //   }
 
-// export default withRouter(Search)            
+export default withRouter(Search)            
