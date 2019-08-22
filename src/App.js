@@ -144,7 +144,7 @@ render(){
                     ? <h2>Loading...</h2>
                     : <Photos pics={this.state.badges} query="badges" />
                   } />
-                  <Route path="/search" render={ () =>
+                  <Route path="/" render={ () =>
                     (this.state.loading)
                     ? <h2>Loading...</h2>
                     : <Photos pics={this.state.pics}/>
