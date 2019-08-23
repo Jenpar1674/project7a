@@ -1,7 +1,7 @@
 import React from 'react';
-import NotFound from './NotFound';
 import ImageItem from './ImageItem';
-import Results from './Results';
+import NotFound from './NotFound';
+
 const Photos = (props) => {
   
   const results = props.pics;
