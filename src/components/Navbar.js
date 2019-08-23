@@ -20,10 +20,11 @@ class Navbar extends Component {
         <nav className="main-nav nav-pill">
           <ul>
           
+          <li><NavLink to='/search'>Search</NavLink></li>
             <li><NavLink to="/tags/butterflies">Butterflies</NavLink></li>
             <li><NavLink to="/tags/bobcats">Bobcats</NavLink></li>
             <li><NavLink to="/tags/badges">Badges</NavLink></li>
-          
+
           </ul>
           </nav>
       </header>

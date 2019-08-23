@@ -20,7 +20,7 @@ const Photos = (props) => {
   
   return(
       <div className="photo-container li:hover img ">
-        <Results/>
+       
             <ul>
             {pics}
             </ul>

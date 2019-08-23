@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { Jumbotron } from 'react-bootstrap'; 
-//import Results from './Results';
+//
+
+import Results from './Results';
 
 class Header extends Component {
     
