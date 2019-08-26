@@ -1,6 +1,6 @@
 //Import React library
-import React, { Component } from 'react';
-import {withRouter} from 'react-router-dom'
+import React, { Component } from './node_modules/react';
+import {withRouter} from './node_modules/react-router-dom'
 
 class Search extends Component  {
 

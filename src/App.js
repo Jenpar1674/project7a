@@ -2,13 +2,13 @@ import axios from 'axios';
 import React, { Component } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import './App.css';
-import apiKey from './Components/config';
-import Header from './Components/Header';
-import Navbar from './Components/Navbar';
-import NotFound from './Components/NotFound';
-import Photos from './Components/Photos';
-import Results from './Components/Results';
-import Search from './Components/Search';
+import apiKey from './components/config';
+import Header from './components/Header';
+import Navbar from './components/Navbar';
+import NotFound from './components/NotFound';
+import Photos from './components/Photos';
+import Results from './components/Results';
+import Search from './components/Search';
 
 //imported components
 

@@ -1,4 +1,4 @@
-import React from 'react';
+import React from './node_modules/react';
 import ImageItem from './ImageItem';
 import NotFound from './NotFound';
 

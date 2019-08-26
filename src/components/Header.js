@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import { Jumbotron } from 'react-bootstrap'; 
+import React, { Component } from './node_modules/react';
+import { Jumbotron } from './node_modules/react-bootstrap'; 
 
 
 
