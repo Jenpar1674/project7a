@@ -1,8 +1,6 @@
-import React,{Component} from './node_modules/react';
-// import{ NavLink } from 'react-router-dom';
-import { withRouter, NavLink} from './node_modules/react-router-dom';
-//import { Link } from "react-router-dom.js";
- //import Search from './Search';
+import React,{Component} from 'react';
+
+import { withRouter, NavLink} from 'react-router-dom';
 
 
  

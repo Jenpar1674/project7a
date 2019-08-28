@@ -95,6 +95,7 @@ render(){  /**render the route with components
              
     <Route exact path="/" component={() => <Search onSearch={this.performSearch} />} />
     <Route path="/search" component={() => <Search onSearch={this.performSearch} />} />
+    
 
     <div className='performSearch'>
       <Navbar onClick={this.performSearch}/>
@@ -104,7 +105,7 @@ render(){  /**render the route with components
               <Route exact path= "/tags/bobcats" render ={ () => <Results title = "Bobcats" />} />
               <Route exact path= "/tags/badges" render ={ () => <Results title = "Badges" />} />
                <Route exact path= "/" render ={ () => <Results title = "Cool Pics Below" />} />
-              <Route exact path="/search/" render={ () => <Results title = "Cool Pics Below"/>} />
+              <Route exact path="/search" render={ () => <Results title = "Cool Pics Below"/>} />
     
         <Switch>
 

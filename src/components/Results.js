@@ -1,4 +1,4 @@
-import React from './node_modules/react'
+import React from 'react'
 
 
 const Results = (props) => ( //dynamic results component prints customizable titles to pages upon props call

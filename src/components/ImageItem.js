@@ -1,4 +1,4 @@
-import React from './node_modules/react';
+import React from 'react';
 //function for showing each image
 const ImageItem = props =>(
   <li>
